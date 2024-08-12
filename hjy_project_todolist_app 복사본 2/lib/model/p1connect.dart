@@ -1,7 +1,7 @@
 import 'package:hjy_project_todolist_app/model/list.dart';
 
 class Connect{
-  static List<TodoList> p1Connect = [];
-  static String num = '123';
+  static List<TodoList> p1Connectt = [];
+  // static String num = '123';
   
 }

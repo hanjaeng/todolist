@@ -48,63 +48,65 @@ class _InsertPageState extends State<InsertPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(imageList[0], width:80),
-                    Checkbox(
-                      value: switchValueList[0], 
-                      onChanged: (value){
-                        switchValueList[0] = value!;
-                        switchChanged(0);
-                      }
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Image.asset(imageList[1], width:80),
-                    Checkbox(
-                      value: switchValueList[1], 
-                      onChanged: (value){
-                        switchValueList[1] = value!;
-                        switchChanged(1);
-                      }
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Image.asset(imageList[2], width:75),
-                    Checkbox(
-                      value: switchValueList[2], 
-                      onChanged: (value){
-                        switchValueList[2] = value!;
-                        switchChanged(2);
-                      }
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Image.asset(imageList[3], width:81),
-                    Checkbox(
-                      value: switchValueList[3], 
-                      onChanged: (value){
-                        switchValueList[3] = value!;
-                        switchChanged(3);
-                      }
-                    ),
-                  ],
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.fromLTRB(35, 0, 0, 0),
+              child: Row(
+                children: [
+                  Column(
+                    children: [
+                      Image.asset(imageList[0], width:80),
+                      Checkbox(
+                        value: switchValueList[0], 
+                        onChanged: (value){
+                          switchValueList[0] = value!;
+                          switchChanged(0);
+                        }
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset(imageList[1], width:80),
+                      Checkbox(
+                        value: switchValueList[1], 
+                        onChanged: (value){
+                          switchValueList[1] = value!;
+                          switchChanged(1);
+                        }
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset(imageList[2], width:75),
+                      Checkbox(
+                        value: switchValueList[2], 
+                        onChanged: (value){
+                          switchValueList[2] = value!;
+                          switchChanged(2);
+                        }
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset(imageList[3], width:81),
+                      Checkbox(
+                        value: switchValueList[3], 
+                        onChanged: (value){
+                          switchValueList[3] = value!;
+                          switchChanged(3);
+                        }
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
             TextField(
                 controller: textEditingController,
                 decoration: InputDecoration(
-                  labelText: '목록을 입력하세요'
+                  labelText: '  메모 추가하기'
                 ),
               ),
             

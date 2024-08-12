@@ -193,7 +193,7 @@ class _ThirdPageState extends State<ThirdPage> {
       result = exbmi.getResult();
       //[$formattedDate] 
       resultStr =
-          '     ${num2Controller.text}kg(${result.$1}), 혈당${num3Controller.text}, 혈압 ${num4Controller.text} \n ';
+          '     ${num2Controller.text}kg(${result.$1}), 혈당${num3Controller.text}, 혈압 ${num4Controller.text} \n     ${num5Controller.text}, ${num6Controller.text}, ${num7Controller.text}';
     }
     setState(() {});
   }

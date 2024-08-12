@@ -6,8 +6,8 @@ import '../model/message.dart';
 
 class FirstPage extends StatefulWidget {
   final Function(ThemeMode) onchageTheme; //onchangeTheme 테마모드 갖고오기 설정!!!
-  final List<TodoList> todolistP1;  
-  const FirstPage({super.key, required this.onchageTheme, required this.todolistP1});
+  // final List<TodoList> todolistP1;  required this.todolistP1
+  const FirstPage({super.key, required this.onchageTheme});
 
   @override
   State<FirstPage> createState() => _FirstPageState();
@@ -21,25 +21,25 @@ class _FirstPageState extends State<FirstPage> {
   void initState() {
     super.initState();
     p1Connect = [];
-    addlist();
+    // addlist();
   }
 
-  addlist(){
-    p1Connect.add(TodoList(imageName: 'images/img_time.png' , listContent: '일정' ) );
-    p1Connect.add(TodoList(imageName: 'images/img_shopping.png' , listContent: '구매예정' ) );
-    p1Connect.add(TodoList(imageName: 'images/img_check.png' , listContent: '체크할것' ) );
-    p1Connect.add(TodoList(imageName: 'images/img_memo.png' , listContent: '메모' ) );
-  }
+  // addlist(){
+  //   Connect.p1Connectt.add(TodoList(imageName: 'images/img_time.png' , listContent: '일정' ) );
+  //   Connect.p1Connectt.add(TodoList(imageName: 'images/img_shopping.png' , listContent: '구매예정' ) );
+  //   Connect.p1Connectt.add(TodoList(imageName: 'images/img_check.png' , listContent: '체크할것' ) );
+  //   Connect.p1Connectt.add(TodoList(imageName: 'images/img_memo.png' , listContent: '메모' ) );
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('${Connect.num}'),
+        // title: Text('${Connect.num}'),
         actions: [
           GestureDetector(
             onTap: () {
-            Connect.num = '456';
+            // Connect.num = '456';
             Navigator.pushNamed(context, '/insert').then((value) => reBuildData(),);
             },
             child: Icon(Icons.add),
@@ -50,14 +50,14 @@ class _FirstPageState extends State<FirstPage> {
 //
       body: 
           ListView.builder(
-            itemCount: p1Connect.length,      //todoList 의 길이만큼 count
+            itemCount: Connect.p1Connectt.length,      //todoList 의 길이만큼 count
             itemBuilder: (context, index){
               return Dismissible(
                 direction: DismissDirection.endToStart,  // 좌로 밀어서 삭제하기
-                key: ValueKey(p1Connect[index]),
+                key: ValueKey(Connect.p1Connectt[index]),
                 onDismissed: (direction){
                   print('2');
-                  p1Connect.remove(p1Connect[index]);
+                  Connect.p1Connectt.remove(Connect.p1Connectt[index]);
                   setState((){});
                 },
                 background: Container(
@@ -77,8 +77,8 @@ class _FirstPageState extends State<FirstPage> {
                     child: Row(
                       children: [
                         // Icon(Icons."${todoList[index].imageName}"),  아이콘 삽입이 안되;;ㅠㅠ
-                        Image.asset(p1Connect[index].imageName, width:80),
-                        Text("   ${p1Connect[index].listContent}", style: TextStyle(fontSize: 20),),
+                        Image.asset(Connect.p1Connectt[index].imageName, width:80),
+                        Text("   ${Connect.p1Connectt[index].listContent}", style: TextStyle(fontSize: 20),),
                       ],
                     
                     ),
@@ -92,7 +92,7 @@ class _FirstPageState extends State<FirstPage> {
   //---fuction---
   reBuildData(){
     if(Message.isadd){
-      p1Connect.add(TodoList(imageName: Message.imageName, listContent: Message.listContent));
+      Connect.p1Connectt.add(TodoList(imageName: Message.imageName, listContent: Message.listContent));
       Message.isadd = false;
     }
     print('1');

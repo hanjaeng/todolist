@@ -4,6 +4,7 @@ import 'package:hjy_project_todolist_app/%08view/p2_second_page.dart';
 import 'package:hjy_project_todolist_app/%08view/p3_third_page.dart';
 
 import '../model/list.dart';
+import '../model/p1connect.dart';
 
 class Home extends StatefulWidget {
   final Function(ThemeMode) onchageTheme; //home의 onchangeTheme 테마모드 갖고오기 설정!!!
@@ -29,8 +30,15 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
     super.initState();
     controllertTabBar = TabController(length: 3, vsync: this); //tapbar 3개
     p1Connect=[];
-    p1Connect.add(TodoList(imageName: ' ', listContent: ' '));
-    
+    addlist();
+    // p1Connect.add(TodoList(imageName: ' ', listContent: ' '));
+  }
+
+    addlist(){
+    Connect.p1Connectt.add(TodoList(imageName: 'images/img_time.png' , listContent: '일정' ) );
+    Connect.p1Connectt.add(TodoList(imageName: 'images/img_shopping.png' , listContent: '구매예정' ) );
+    Connect.p1Connectt.add(TodoList(imageName: 'images/img_check.png' , listContent: '체크할것' ) );
+    Connect.p1Connectt.add(TodoList(imageName: 'images/img_memo.png' , listContent: '메모' ) );
   }
 
   @override
@@ -86,7 +94,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
       body: TabBarView(
         controller: controllertTabBar,
         children: [  //todolistR: todoList, 
-              FirstPage(todolistP1: p1Connect, onchageTheme: mode_changeThemeMode),
+              FirstPage(onchageTheme: mode_changeThemeMode),
               SecondPage(onchageTheme: mode_changeThemeMode),
               ThirdPage(onchageTheme: mode_changeThemeMode),
         ],

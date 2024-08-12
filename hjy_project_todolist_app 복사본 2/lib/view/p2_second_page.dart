@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hjy_project_todolist_app/model/p1connect.dart';
 import 'package:simple_gesture_detector/simple_gesture_detector.dart';
 
 class SecondPage extends StatefulWidget {
@@ -52,6 +53,7 @@ class _SecondPageState extends State<SecondPage> {
       body: Center(        
         child: Column(
           children: [
+            // Text(Connect.num),
             SizedBox(
               height: 100,
               child: ListView.builder(
