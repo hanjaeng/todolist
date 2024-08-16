@@ -20,20 +20,42 @@ class _FirstPageState extends State<FirstPage> {   /// FirstPageState는 FirstPa
         child: ListView.builder(
           itemCount: widget.list.length,  //widget FirstPage에서 상속받음 알려줌
             itemBuilder: (context, index_card){  //card에서 보여줄 인덱스
-              return GestureDetector(
-                onTap: () => _showDialog(index_card),  //showdialog만들때 index정보로 가져와만들기
-                child: Card(
+              return Dismissible(
+                direction: DismissDirection.endToStart,  // 좌로 밀어서 삭제하기
+                key: ValueKey(widget.list[index_card]),
+                onDismissed: (direction){
+                  // print('2');
+                  widget. list.remove(widget.list[index_card]);
+                  setState((){});
+                },
+                background: Container(
+                  color: Color.fromARGB(255, 247, 143, 143),
+                  alignment: Alignment.centerRight,
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Image.asset(
-                        widget.list[index_card].imagePath,
-                        width: 100,   //FirstPage(widget)에 있는 
-                      ),
-                      Text(
-                        "    ${widget.list[index_card].animalName}")
-                  ],
-                )
-                            ),
+                      Text("밀어서 삭제", style:TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold,) ),
+                      Icon(Icons.delete_forever, color: Colors.white, size: 50,),
+                    ],
+                  ), 
+                ),
+
+
+                child: GestureDetector(
+                  onTap: () => _showDialog(index_card),  //showdialog만들때 index정보로 가져와만들기
+                  child: Card(
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          widget.list[index_card].imagePath,
+                          width: 100,   //FirstPage(widget)에 있는 
+                        ),
+                        Text(
+                          "    ${widget.list[index_card].animalName}")
+                    ],
+                  )
+                              ),
+                ),
               );
           }  
         ),

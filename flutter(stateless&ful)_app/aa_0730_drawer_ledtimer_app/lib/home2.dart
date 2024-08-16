@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 
 class Home2 extends StatefulWidget {
@@ -282,12 +283,23 @@ class _Home2State extends State<Home2> {
   }
 
   errorSnackBar(){
+    //본문 스넥바
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('글자를 입력 하세요.'),
-        duration: Duration(seconds: 2),
+        duration: Duration(seconds: 5),
         backgroundColor: Colors.red,
       )
     );
+    Flushbar(
+      // draw위의 스넥바 (another_flushbar: ^1.12.30 yaml 해줘야함!!!)
+      // maxWidth: 200,
+      messageSize: 20,
+      // padding: EdgeInsets.fromLTRB(0,10,0,10),
+      margin: EdgeInsets.fromLTRB(0,0,0,0),
+      backgroundColor: Colors.red,
+      message: '글자를 입력하세요.',
+      duration: Duration(seconds: 5),
+    ).show(context);
   }
 }
