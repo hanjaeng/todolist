@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
 import '../model/animal.dart';
 
 class SecondPage extends StatefulWidget {    //list를 가져와서 추가

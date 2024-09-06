@@ -10,5 +10,6 @@ class Animal{
       required this.animalName,
       required this.kind,
       required this.flyExist,
-  });
+    }
+  );
 }

@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       '/insert' : (context) => const InsertPage(),
       '/detail' : (context) => const DetailPage(),
     },
-    initialRoute: '/home',
+    initialRoute: '/',
     );
   }
 }

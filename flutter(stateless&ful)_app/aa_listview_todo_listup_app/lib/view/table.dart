@@ -60,11 +60,11 @@ class _TablePageState extends State<TablePage> {
                     
                   ),
                   child: GestureDetector(
-                    // onTap: () {
-                    //   Message.imageName = todolist[index].imageName;
-                    //   Message.listContent = todolist[index].listContent;
-                    //   Navigator.pushNamed(context, '/detail');
-                    // },
+                    onTap: () {
+                      Message.imageName = todolist[index].imageName;
+                      Message.listContent = todolist[index].listContent;
+                      Navigator.pushNamed(context, '/detail');
+                    },
                     child: Card(
                       color: index %2 == 0? const Color.fromARGB(255, 255, 255, 255) : Color.fromARGB(255, 173, 173, 173),
                       child: Row(

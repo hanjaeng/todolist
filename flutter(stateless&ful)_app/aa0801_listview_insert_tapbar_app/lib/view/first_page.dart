@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../model/animal.dart';
 
 class FirstPage extends StatefulWidget {   //FisrtPage는  StatefulWidget에서 상속받음!
@@ -40,7 +39,6 @@ class _FirstPageState extends State<FirstPage> {   /// FirstPageState는 FirstPa
                   ), 
                 ),
 
-
                 child: GestureDetector(
                   onTap: () => _showDialog(index_card),  //showdialog만들때 index정보로 가져와만들기
                   child: Card(
@@ -51,12 +49,12 @@ class _FirstPageState extends State<FirstPage> {   /// FirstPageState는 FirstPa
                           width: 100,   //FirstPage(widget)에 있는 
                         ),
                         Text(
-                          "    ${widget.list[index_card].animalName}")
+                      "    ${widget.list[index_card].animalName}")
                     ],
-                  )
-                              ),
+                  ),
                 ),
-              );
+              ),
+            );
           }  
         ),
       )
